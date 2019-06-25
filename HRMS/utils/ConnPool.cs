@@ -9,10 +9,13 @@ namespace HRMS.utils
 {
     public class ConnPool
     {
-        private const string ConnString = "server=139.196.120.94;userid=root;password=mysql@aliyun;database=HRM;pooling=true;MinPoolSize=10;MaxPoolSize=25";
+        private const string ConnString =
+            "server=139.196.120.94;userid=root;password=mysql@aliyun;database=HRM;pooling=true;MinPoolSize=10;MaxPoolSize=25";
+
         private MySqlConnection mySqlConn = null;
         private static volatile ConnPool instance = null;
         private static object lockHelper = new object();
+
         private ConnPool()
         {
             mySqlConn = new MySqlConnection(ConnString);
@@ -32,11 +35,12 @@ namespace HRMS.utils
                         }
                     }
                 }
+
                 return instance;
             }
         }
 
-        public DataTable exeQuery(string StrSql)//数据查询
+        public DataTable exeQuery(string StrSql) //执行查询
         {
             //当连接处于打开状态时关闭,然后再打开,避免有时候数据不能及时更新
             if (mySqlConn.State == ConnectionState.Open)
@@ -58,12 +62,39 @@ namespace HRMS.utils
                     mySqlConn.Close();
                     return dt;
                 }
+
                 return null;
             }
             catch (Exception ex)
             {
                 System.Console.WriteLine(ex.Message);
                 return null;
+            }
+            finally
+            {
+                mySqlConn.Close();
+            }
+        }
+
+        public int exeNonQuery(string StrSql) //执行非查询
+        {
+            //当连接处于打开状态时关闭,然后再打开,避免有时候数据不能及时更新
+            if (mySqlConn.State == ConnectionState.Open)
+            {
+                mySqlConn.Close();
+            }
+            try
+            {
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(StrSql, mySqlConn);
+                int effectLine = cmd.ExecuteNonQuery();
+              
+                return effectLine;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                return 0;
             }
             finally
             {
