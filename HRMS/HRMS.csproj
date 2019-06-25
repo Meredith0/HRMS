@@ -126,12 +126,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resouce\TestDbConn.aspx.cs">
+    <Compile Include="Resource\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\TestDbConn.aspx.cs">
       <DependentUpon>TestDbConn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Resouce\TestDbConn.aspx.designer.cs">
+    <Compile Include="Resource\TestDbConn.aspx.designer.cs">
       <DependentUpon>TestDbConn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="UnitTest\LoginValidatorTest.aspx.cs">
       <DependentUpon>LoginValidatorTest.aspx</DependentUpon>
@@ -154,7 +168,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Resouce\TestDbConn.aspx" />
+    <Content Include="Resource\default.aspx" />
+    <Content Include="Resource\TestDbConn.aspx" />
+    <Content Include="Resource\WebForm2.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

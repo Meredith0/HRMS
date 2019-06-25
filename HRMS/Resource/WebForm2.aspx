@@ -15,9 +15,9 @@
 <body>
     <form id="form1" runat="server" >
         <div>
-            <asp:TreeView ID="TreeView1" runat="server" ShowLines="True" align="left" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+            <asp:TreeView ID="TreeView1" runat="server" ShowLines="True" align="left" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged" >
                 <Nodes>
-                    <asp:TreeNode Text="信息查询" Value="信息查询">
+                    <asp:TreeNode Text="信息查询" Value="信息查询" >
                         <asp:TreeNode Text="员工信息" Value="员工信息"></asp:TreeNode>
                     </asp:TreeNode>
                     <asp:TreeNode Text="信息录入 " Value="信息录入 ">
@@ -28,7 +28,7 @@
                         <asp:TreeNode Text="员工信息 " Value="员工信息 "></asp:TreeNode>
                         <asp:TreeNode Text="部门信息 " Value="部门信息 "></asp:TreeNode>
                     </asp:TreeNode>
-                    <asp:TreeNode Text="信息删除" Value="信息删除">
+                    <asp:TreeNode Text="信息修改" Value="信息修改">
                         <asp:TreeNode Text="员工信息 " Value="员工信息 "></asp:TreeNode>
                         <asp:TreeNode Text="部门信息 " Value="部门信息 "></asp:TreeNode>
                     </asp:TreeNode>

@@ -23,12 +23,11 @@ namespace HRMS.utils
 
         public bool selectValid()
         {
-            // Page.Session["loginUser"]
             var conn = ConnPool.getInstance;
-            string sql = "SELECT count(*) FROM Auth JOIN employee WHERE auth='select' and employee.ename = '"+ Page.Session["loginUser"]+"'";
+            string sql = "SELECT auth FROM Auth JOIN employee WHERE auth='select' and employee.ename = '"+ Page.Session["loginUser"]+"'";
             DataTable res = conn.exeQuery(sql);
            
-            if(res == null || res.Rows.Count == 0)
+            if(res == null || res.Rows[0][0].ToString() != "select")
             {
                 return false;
             }
@@ -38,11 +37,11 @@ namespace HRMS.utils
         public bool updateValid()
         {
             var conn = ConnPool.getInstance;
-            string sql = "SELECT count(*) FROM Auth INNER JOIN employee WHERE auth='update' and employee.ename = '" +
+            string sql = "SELECT auth FROM Auth INNER JOIN employee WHERE auth='update' and employee.ename = '" +
                          Page.Session["loginUser"] + "';";
             var res = conn.exeQuery(sql);
 
-            if (res == null || res.Rows.Count == 0)
+            if (res == null || res.Rows[0][0].ToString() != "update")
             {
                 return false;
             }
@@ -52,11 +51,11 @@ namespace HRMS.utils
         public bool deleteValid()
         {
             var conn = ConnPool.getInstance;
-            string sql = "SELECT count(*) FROM Auth INNER JOIN employee WHERE auth='delete' and employee.ename = '" +
+            string sql = "SELECT auth FROM Auth INNER JOIN employee WHERE auth='delete' and employee.ename = '" +
                          Page.Session["loginUser"] + "';";
             var res = conn.exeQuery(sql);
 
-            if (res == null || res.Rows.Count == 0)
+            if (res == null || res.Rows[0][0].ToString() != "delete")
             {
                 return false;
             }
@@ -66,11 +65,11 @@ namespace HRMS.utils
         public bool insertValid()
         {
             var conn = ConnPool.getInstance;
-            string sql = "SELECT count(*) FROM Auth INNER JOIN employee WHERE auth='insert' and employee.ename = '" +
+            string sql = "SELECT auth FROM Auth INNER JOIN employee WHERE auth='insert' and employee.ename = '" +
                          Page.Session["loginUser"] + "';";
             var res = conn.exeQuery(sql);
 
-            if (res == null || res.Rows.Count == 0)
+            if (res == null || res.Rows[0][0].ToString() != "insert")
             {
                 return false;
             }
