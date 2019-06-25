@@ -62,7 +62,6 @@ namespace HRMS.utils
                     mySqlConn.Close();
                     return dt;
                 }
-
                 return null;
             }
             catch (Exception ex)

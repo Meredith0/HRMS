@@ -133,6 +133,16 @@
     <Compile Include="Resouce\TestDbConn.aspx.designer.cs">
       <DependentUpon>TestDbConn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UnitTest\LoginValidatorTest.aspx.cs">
+      <DependentUpon>LoginValidatorTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnitTest\LoginValidatorTest.aspx.designer.cs">
+      <DependentUpon>LoginValidatorTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utils\LoginValidator.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="utils\ConnPool.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +168,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="UnitTest\LoginValidatorTest.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
