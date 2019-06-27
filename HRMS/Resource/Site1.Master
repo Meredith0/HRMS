@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="HRMS.Resource.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <div>
+            <asp:TreeView ID="TreeView1" runat="server" ShowLines="True" align="left" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged" >
+                <Nodes>
+                    <asp:TreeNode Text="信息查询" Value="信息查询" >
+                        <asp:TreeNode Text="员工信息" Value="员工信息"></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="信息录入 " Value="信息录入 ">
+                        <asp:TreeNode Text="员工信息 " Value="员工信息 "></asp:TreeNode>
+                        <asp:TreeNode Text="部门信息 " Value="部门信息 "></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="信息删除 " Value="信息删除 ">
+                        <asp:TreeNode Text="员工信息 " Value="员工信息 "></asp:TreeNode>
+                        <asp:TreeNode Text="部门信息 " Value="部门信息 "></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="信息修改" Value="信息修改">
+                        <asp:TreeNode Text="员工信息 " Value="员工信息 "></asp:TreeNode>
+                        <asp:TreeNode Text="部门信息 " Value="部门信息 "></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="信息浏览" Value="信息浏览">
+                        <asp:TreeNode Text="员工信息 " Value="员工信息 "></asp:TreeNode>
+                        <asp:TreeNode Text="部门信息 " Value="部门信息 "></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="数据报表" Value="数据报表">
+                        <asp:TreeNode Text="员工信息 " Value="员工信息 "></asp:TreeNode>
+                        <asp:TreeNode Text="部门信息 " Value="部门信息 "></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="用户管理" Value="用户管理">
+                        <asp:TreeNode Text="添加用户 " Value="添加用户 "></asp:TreeNode>
+                        <asp:TreeNode Text="删除用户 " Value="删除用户 "></asp:TreeNode>
+                        <asp:TreeNode Text="修改密码 " Value="修改密码 "></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="系统帮助及使用说明" Value="系统帮助及使用说明"></asp:TreeNode>
+                </Nodes>
+            </asp:TreeView>
+            <iframe id="frmList" runat="server" border="0"  frameborder="0" align="right" name="I1" scrolling="auto"  class="auto-style1"></iframe>
+        </div>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace HRMS.Resouce {
+namespace HRMS.Resource.userManagement {
     
     
-    public partial class _default {
+    public partial class WebForm2 {
         
         /// <summary>
         /// form1 控件。
@@ -31,22 +31,13 @@ namespace HRMS.Resouce {
         protected global::System.Web.UI.WebControls.TextBox eid;
         
         /// <summary>
-        /// password 控件。
+        /// commit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
-        
-        /// <summary>
-        /// login 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button login;
+        protected global::System.Web.UI.WebControls.Button commit;
         
         /// <summary>
         /// resp 控件。

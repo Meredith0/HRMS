@@ -17,16 +17,23 @@ namespace HRMS.Resouce
 
         protected void login_Click(object sender, EventArgs e)
         {
+            //判空
+            if (eid.Text==null||password.Text==null)
+            {
+                return;
+            }
+
             var conn=ConnPool.getInstance;
-            string sql=string.Format("select count(*) from employee where ename='{0}' and password='{1}'", username.Text, password.Text);
+            string sql=string.Format("select * from employee where eid='{0}' and password='{1}'", eid.Text, password.Text);
             var res = conn.exeQuery(sql);
-            if (res.Rows.Count == 0)
+            if (res == null)
             {
                 resp.Text = "密码错误";
             }
             else
             {
-                Response.Redirect("Resource/WebForm2.aspx");//跳转到首页
+                Session["loginUser"] = eid.Text;
+                Response.Redirect("index.aspx");//跳转到首页
             }
         }
     }
